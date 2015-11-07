@@ -1,4 +1,9 @@
 .DS_Store
 
+# dependency paths
 bower_components/
 node_modules/
+
+# build paths
+app/source/dev/
+app/source/prod/
