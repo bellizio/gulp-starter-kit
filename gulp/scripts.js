@@ -24,14 +24,19 @@ module.exports = function(gulp, $, paths) {
 
   // build js for prod
   gulp.task('js:prod', ['js:dev'], function() {
-    return gulp.src([
-        // order is important here
-        paths.prod.js + '/vendor.js',
-        paths.prod.js + '/app.js'
-      ])
+    var sourceFiles = [
+      // order is important here
+      paths.prod.js + '/vendor.js',
+      paths.prod.js + '/app.js'
+    ];
+
+    return gulp.src(sourceFiles)
       .pipe($.concat('app.min.js'))
       .pipe($.uglify())
       .pipe($.size({title: "APP JS", showFiles: true}))
-      .pipe(gulp.dest(paths.prod.js));
+      .pipe(gulp.dest(paths.prod.js))
+      .on('end', function() {
+        return $.del(sourceFiles);
+      });
   });
 };
