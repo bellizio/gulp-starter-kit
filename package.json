@@ -1,0 +1,24 @@
+{
+  "name": "gulp-starter-kit",
+  "version": "1.0.0",
+  "description": "A gulp starter kit for front-end projects",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bellizio/gulp-starter-kit.git"
+  },
+  "keywords": [
+    "gulp",
+    "toolkit",
+    "front-end"
+  ],
+  "author": "Devon Bellizio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bellizio/gulp-starter-kit/issues"
+  },
+  "homepage": "https://github.com/bellizio/gulp-starter-kit#readme"
+}
