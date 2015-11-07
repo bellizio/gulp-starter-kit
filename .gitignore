@@ -1,4 +1,6 @@
+# misc.
 .DS_Store
+*.log
 
 # dependency paths
 bower_components/
