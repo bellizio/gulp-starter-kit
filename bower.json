@@ -1,0 +1,21 @@
+{
+  "name": "gulp-starter-kit",
+  "description": "A gulp starter kit for front-end projects",
+  "authors": [
+    "Devon Bellizio"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "gulp",
+    "toolkit",
+    "front-end"
+  ],
+  "homepage": "https://github.com/bellizio/gulp-starter-kit",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
