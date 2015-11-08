@@ -40,6 +40,7 @@ There are a number of tasks defined and chained together, but the ones you will 
 * `gulp build:prod`
 * `gulp serve:prod`
 * `gulp clean`
+* `gulp lint`
 
 ### Plugins
 Rather than listing/detailing each plugin used in the project, please refer to the devDependencies field in the package.json file for a complete list. You can find up-to-date documentation on each plugin at [npmjs.com](https://www.npmjs.com/).
