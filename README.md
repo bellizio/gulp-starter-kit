@@ -4,7 +4,7 @@ This is a gulp starter kit for front-end projects. The goal of this project is t
 
 In order for the build process to be functional, at least a couple (necessary) assumptions need to be made: 1) a source directory structure with content exist and 2) Bower is used. While it could be argued that number 2 is not necessary, I do find (like many other developers) that the use of Bower makes front-end dependency management much less of a headache, especially on large scale applications.
 
-With that said, I have created a simple directory structure with content under **app/source** and have also added a Bower dependency. This is what best suits my workflow, but feel free to modify it as you wish. Just keep in mind that changes to this structure will influence the build process.
+With that said, I have created a simple directory structure with content under **app/source** and have also added a Bower dependency for demonstration purposes. This structure is what best suits my workflow, but feel free to modify it as you wish. Just keep in mind that changes to this structure will influence the build process.
 
 ## Getting Started
 
