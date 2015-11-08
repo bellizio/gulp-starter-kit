@@ -6,8 +6,6 @@ In order for the build process to be functional, at least a couple (necessary) a
 
 With that said, I have created a simple directory structure with content under **app/source** and have also added a Bower dependency. This is what best suits my workflow, but feel free to modify it as you wish. Just keep in mind that changes to this structure will influence the build process.
 
----
-
 ## Getting Started
 
 ### Dependencies
