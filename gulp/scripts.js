@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(gulp, $, paths) {
+module.exports = function(gulp, $, paths, env) {
   // build js for dev
   gulp.task('js:dev', ['vendor-js', 'app-js']);
 
@@ -9,17 +9,17 @@ module.exports = function(gulp, $, paths) {
     return gulp.src($.mainBowerFiles({filter: '**/*.js'}))
       .pipe($.concat('vendor.js'))
       .pipe($.size({title: "VENDOR JS", showFiles: true}))
-      .pipe($.if(!global.prod, gulp.dest(paths.dev.js), gulp.dest(paths.prod.js)));
+      .pipe($.if(!env.prod, gulp.dest(paths.dev.js), gulp.dest(paths.prod.js)));
   });
 
   // build app js
   gulp.task('app-js', function() {
     return gulp.src(paths.src.js)
-      .pipe($.if(!global.prod, $.sourcemaps.init()))
+      .pipe($.if(!env.prod, $.sourcemaps.init()))
         .pipe($.concat('app.js'))
-      .pipe($.if(!global.prod, $.sourcemaps.write()))
+      .pipe($.if(!env.prod, $.sourcemaps.write()))
       .pipe($.size({title: "APP JS", showFiles: true}))
-      .pipe($.if(!global.prod, gulp.dest(paths.dev.js), gulp.dest(paths.prod.js)));
+      .pipe($.if(!env.prod, gulp.dest(paths.dev.js), gulp.dest(paths.prod.js)));
   });
 
   // build js for prod

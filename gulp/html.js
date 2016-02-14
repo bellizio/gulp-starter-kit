@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(gulp, $, paths) {
+module.exports = function(gulp, $, paths, env) {
   // minify html for prod
   gulp.task('html:prod', function() {
     var options = {

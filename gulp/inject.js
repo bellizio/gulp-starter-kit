@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(gulp, $, paths) {
+module.exports = function(gulp, $, paths, env) {
   // inject css and js into index.html for dev build
   gulp.task('inject:dev', function() {
     var css = gulp.src([

@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(gulp, $, paths) {
+module.exports = function(gulp, $, paths, env) {
   // lint all the things
   gulp.task('lint', ['lint:js', 'lint:css']);
 

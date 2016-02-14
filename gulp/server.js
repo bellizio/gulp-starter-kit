@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(gulp, $, paths) {
+module.exports = function(gulp, $, paths, env) {
 
   var browserSync = require('browser-sync').create('app-server');
 

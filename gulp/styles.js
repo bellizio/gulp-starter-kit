@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(gulp, $, paths) {
+module.exports = function(gulp, $, paths, env) {
   // build all css
   gulp.task('css', ['app-css', 'vendor-css']);
 
@@ -21,23 +21,23 @@ module.exports = function(gulp, $, paths) {
     ];
 
     return gulp.src(paths.src.root + '/assets/css/app.scss')
-      .pipe($.if(!global.prod, $.sourcemaps.init()))
+      .pipe($.if(!env.prod, $.sourcemaps.init()))
         .pipe($.sass(sassOptions))
         .pipe($.postcss(processors))
-      .pipe($.if(!global.prod, $.sourcemaps.write()))
-      .pipe($.if(global.prod, $.rename('app.min.css')))
-      .pipe($.if(global.prod, $.minifyCss()))
+      .pipe($.if(!env.prod, $.sourcemaps.write()))
+      .pipe($.if(env.prod, $.rename('app.min.css')))
+      .pipe($.if(env.prod, $.minifyCss()))
       .pipe($.size({title: "APP CSS", showFiles: true}))
-      .pipe($.if(!global.prod, gulp.dest(paths.dev.css), gulp.dest(paths.prod.css)));
+      .pipe($.if(!env.prod, gulp.dest(paths.dev.css), gulp.dest(paths.prod.css)));
   });
 
   // build vendor css
   gulp.task('vendor-css', function() {
     return gulp.src($.mainBowerFiles({filter: '**/*.css'}))
       .pipe($.concat('vendor.css'))
-      .pipe($.if(global.prod, $.rename('vendor.min.css')))
-      .pipe($.if(global.prod, $.minifyCss()))
+      .pipe($.if(env.prod, $.rename('vendor.min.css')))
+      .pipe($.if(env.prod, $.minifyCss()))
       .pipe($.size({title: "VENDOR CSS", showFiles: true}))
-      .pipe($.if(!global.prod, gulp.dest(paths.dev.css), gulp.dest(paths.prod.css)));
+      .pipe($.if(!env.prod, gulp.dest(paths.dev.css), gulp.dest(paths.prod.css)));
   });
 };

@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(gulp, $, paths) {
+module.exports = function(gulp, $, paths, env) {
   // clean all the things
   gulp.task('clean', ['clean:dev', 'clean:prod']);
 

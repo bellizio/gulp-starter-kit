@@ -5,7 +5,8 @@ var gulp     = require('gulp'),
       pattern: ['gulp-*', 'main-bower-files', 'del', 'run-sequence', 'browser-sync', 'http-proxy-middleware']
     }),
     taskPath = './gulp/',
-    taskList = require('fs').readdirSync(taskPath);
+    taskList = require('fs').readdirSync(taskPath),
+    env      = {};
 
 var paths = {
   bower:   'bower_components',
@@ -35,7 +36,7 @@ var paths = {
 
 taskList.forEach(function(taskFile) {
   try {
-    require(taskPath + taskFile)(gulp, $, paths);
+    require(taskPath + taskFile)(gulp, $, paths, env);
   } catch(error) {
     console.error(taskFile + ' could not be loaded: ' + error);
   }
