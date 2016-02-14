@@ -34,5 +34,9 @@ var paths = {
 };
 
 taskList.forEach(function(taskFile) {
-  require(taskPath + taskFile)(gulp, $, paths);
+  try {
+    require(taskPath + taskFile)(gulp, $, paths);
+  } catch(error) {
+    console.error(taskFile + ' could not be loaded: ' + error);
+  }
 });
