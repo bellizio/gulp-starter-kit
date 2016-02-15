@@ -11,6 +11,7 @@ module.exports = function(gulp, $, paths, env) {
 
     return gulp.src(paths.prod.root + '/index.html')
       .pipe($.minifyHtml(options))
+      .pipe($.size({title: 'HTML'}))
       .pipe(gulp.dest(paths.prod.root));
   });
 };
