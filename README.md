@@ -23,11 +23,12 @@ With that said, I have created a simple directory structure with content under *
 ## Overview
 
 ### gulpfile.js
-The **gulpfile.js** file is intended to act as a global file and is configured to read/sync all task files in the gulp folder. In an effort to avoid unnecessary duplication, each task module in the gulp folder is passed three parameters:
+The **gulpfile.js** file is intended to act as a global file and is configured to read/sync all task files in the gulp folder. In an effort to avoid unnecessary duplication, each task module in the gulp folder is passed 4 parameters:
 
 1. **gulp**
 1. **$** - reference to [gulp-load-plugins](https://www.npmjs.com/package/gulp-load-plugins)
 1. **paths** - frequently used directories in gulp tasks
+1. **env** - environment variables used for controlling the I/O of content in gulp tasks
 
 ### Gulp Folder
 All gulp tasks are separated out into their respective files under the **gulp** folder. This modular approach allows for better maintainability and organization of the build process as the app matures.
