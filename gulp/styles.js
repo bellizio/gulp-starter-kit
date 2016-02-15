@@ -27,7 +27,7 @@ module.exports = function(gulp, $, paths, env) {
       .pipe($.if(!env.prod, $.sourcemaps.write()))
       .pipe($.if(env.prod, $.rename('app.min.css')))
       .pipe($.if(env.prod, $.minifyCss()))
-      .pipe($.size({title: "APP CSS", showFiles: true}))
+      .pipe($.size({title: 'APP CSS', showFiles: true}))
       .pipe($.if(!env.prod, gulp.dest(paths.dev.css), gulp.dest(paths.prod.css)));
   });
 
@@ -37,7 +37,7 @@ module.exports = function(gulp, $, paths, env) {
       .pipe($.concat('vendor.css'))
       .pipe($.if(env.prod, $.rename('vendor.min.css')))
       .pipe($.if(env.prod, $.minifyCss()))
-      .pipe($.size({title: "VENDOR CSS", showFiles: true}))
+      .pipe($.size({title: 'VENDOR CSS', showFiles: true}))
       .pipe($.if(!env.prod, gulp.dest(paths.dev.css), gulp.dest(paths.prod.css)));
   });
 };

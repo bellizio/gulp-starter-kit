@@ -8,7 +8,7 @@ module.exports = function(gulp, $, paths, env) {
   gulp.task('vendor-js', function() {
     return gulp.src($.mainBowerFiles({filter: '**/*.js'}))
       .pipe($.concat('vendor.js'))
-      .pipe($.size({title: "VENDOR JS", showFiles: true}))
+      .pipe($.size({title: 'VENDOR JS', showFiles: true}))
       .pipe($.if(!env.prod, gulp.dest(paths.dev.js), gulp.dest(paths.prod.js)));
   });
 
@@ -18,7 +18,7 @@ module.exports = function(gulp, $, paths, env) {
       .pipe($.if(!env.prod, $.sourcemaps.init()))
         .pipe($.concat('app.js'))
       .pipe($.if(!env.prod, $.sourcemaps.write()))
-      .pipe($.size({title: "APP JS", showFiles: true}))
+      .pipe($.size({title: 'APP JS', showFiles: true}))
       .pipe($.if(!env.prod, gulp.dest(paths.dev.js), gulp.dest(paths.prod.js)));
   });
 
@@ -33,7 +33,7 @@ module.exports = function(gulp, $, paths, env) {
     return gulp.src(sourceFiles)
       .pipe($.concat('app.min.js'))
       .pipe($.uglify())
-      .pipe($.size({title: "APP JS", showFiles: true}))
+      .pipe($.size({title: 'APP JS', showFiles: true}))
       .pipe(gulp.dest(paths.prod.js))
       .on('end', function() {
         return $.del(sourceFiles);
