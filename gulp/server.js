@@ -1,10 +1,10 @@
 'use strict';
 
-module.exports = function(gulp, $, paths, env) {
+module.exports = (gulp, $, paths, env) => {
 
-  var browserSync = require('browser-sync').create('app-server');
+  const browserSync = require('browser-sync').create('app-server');
 
-  var browserSyncInit = function(dir) {
+  const browserSyncInit = (dir) => {
     browserSync.init({
       server: {
         baseDir: dir
@@ -13,11 +13,11 @@ module.exports = function(gulp, $, paths, env) {
     });
   };
 
-  gulp.task('serve', ['watch'], function() {
+  gulp.task('serve', ['watch'], () => {
     browserSyncInit(paths.dev.root);
   });
 
-  gulp.task('serve:prod', ['build:prod'], function() {
+  gulp.task('serve:prod', ['build:prod'], () => {
     browserSyncInit(paths.prod.root);
   });
 };

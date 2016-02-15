@@ -1,26 +1,26 @@
 'use strict';
 
-module.exports = function(gulp, $, paths, env) {
+module.exports = (gulp, $, paths, env) => {
   // inject css and js into index.html for dev build
-  gulp.task('inject:dev', function() {
-    var css = gulp.src([
+  gulp.task('inject:dev', () => {
+    const css = gulp.src([
       // order is important here
       paths.dev.css + '/vendor.css',
       paths.dev.css + '/app.css'
     ], {read: false});
 
-    var js = gulp.src([
+    const js = gulp.src([
       // order is important here
       paths.dev.js + '/vendor.js',
       paths.dev.js + '/app.js'
     ], {read: false});
 
-    var cssOptions = {
+    const cssOptions = {
       ignorePath: paths.dev.root,
       addRootSlash: false
     };
 
-    var jsOptions = {
+    const jsOptions = {
       ignorePath: paths.dev.root,
       addRootSlash: false
     };
@@ -32,23 +32,23 @@ module.exports = function(gulp, $, paths, env) {
   });
 
   // inject js and css into index.html for prod build
-  gulp.task('inject:prod', function() {
-    var css = gulp.src([
+  gulp.task('inject:prod', () => {
+    const css = gulp.src([
       // order is important here
       paths.prod.css + '/app.min.css'
     ], {read: false});
 
-    var js = gulp.src([
+    const js = gulp.src([
       // order is important here
       paths.prod.js + '/app.min.js'
     ], {read: false});
 
-    var cssOptions = {
+    const cssOptions = {
       ignorePath: paths.prod.root,
       addRootSlash: false
     };
 
-    var jsOptions = {
+    const jsOptions = {
       ignorePath: paths.prod.root,
       addRootSlash: false
     };

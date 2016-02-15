@@ -1,12 +1,12 @@
 'use strict';
 
-module.exports = function(gulp, $, paths, env) {
+module.exports = (gulp, $, paths, env) => {
   // build all css
   gulp.task('css', ['app-css', 'vendor-css']);
 
   // build app css
-  gulp.task('app-css', function() {
-    var sassOptions = {
+  gulp.task('app-css', () => {
+    const sassOptions = {
       style: 'nested',
       precision: 10,
       includePaths: [
@@ -14,7 +14,7 @@ module.exports = function(gulp, $, paths, env) {
       ]
     };
 
-    var processors = [
+    const processors = [
       require('autoprefixer')({
         browsers: ['last 2 versions']
       })
@@ -32,7 +32,7 @@ module.exports = function(gulp, $, paths, env) {
   });
 
   // build vendor css
-  gulp.task('vendor-css', function() {
+  gulp.task('vendor-css', () => {
     return gulp.src($.mainBowerFiles({filter: '**/*.css'}))
       .pipe($.concat('vendor.css'))
       .pipe($.if(env.prod, $.rename('vendor.min.css')))

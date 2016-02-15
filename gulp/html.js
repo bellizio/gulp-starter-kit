@@ -1,9 +1,9 @@
 'use strict';
 
-module.exports = function(gulp, $, paths, env) {
+module.exports = (gulp, $, paths, env) => {
   // minify html for prod
-  gulp.task('html:prod', function() {
-    var options = {
+  gulp.task('html:prod', () => {
+    const options = {
       empty: true,
       spare: true,
       quotes: true
