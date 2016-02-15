@@ -2,7 +2,7 @@
 
 var gulp     = require('gulp'),
     $        = require('gulp-load-plugins')({
-      pattern: ['gulp-*', 'main-bower-files', 'del', 'run-sequence', 'browser-sync', 'http-proxy-middleware']
+      pattern: ['gulp-*', 'main-bower-files', 'del', 'run-sequence', 'browser-sync']
     }),
     taskPath = './gulp/',
     taskList = require('fs').readdirSync(taskPath),
