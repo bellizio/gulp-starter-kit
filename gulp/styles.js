@@ -1,6 +1,10 @@
 'use strict';
 
 module.exports = (gulp, $, paths, env) => {
+
+  const cssnano      = require('cssnano');
+  const autoprefixer = require('autoprefixer')({browsers: ['last 2 versions']});
+
   // build all css
   gulp.task('css', ['app-css', 'vendor-css']);
 
@@ -14,19 +18,12 @@ module.exports = (gulp, $, paths, env) => {
       ]
     };
 
-    const processors = [
-      require('autoprefixer')({
-        browsers: ['last 2 versions']
-      })
-    ];
-
     return gulp.src(paths.src.root + '/assets/css/app.scss')
       .pipe($.if(!env.prod, $.sourcemaps.init()))
         .pipe($.sass(sassOptions))
-        .pipe($.postcss(processors))
+        .pipe($.if(!env.prod, $.postcss([autoprefixer]), $.postcss([autoprefixer, cssnano])))
       .pipe($.if(!env.prod, $.sourcemaps.write()))
       .pipe($.if(env.prod, $.rename('app.min.css')))
-      .pipe($.if(env.prod, $.minifyCss()))
       .pipe($.size({title: 'APP CSS', showFiles: true}))
       .pipe($.if(!env.prod, gulp.dest(paths.dev.css), gulp.dest(paths.prod.css)));
   });
@@ -35,8 +32,8 @@ module.exports = (gulp, $, paths, env) => {
   gulp.task('vendor-css', () => {
     return gulp.src($.mainBowerFiles({filter: '**/*.css'}))
       .pipe($.concat('vendor.css'))
+      .pipe($.if(env.prod, $.postcss([cssnano])))
       .pipe($.if(env.prod, $.rename('vendor.min.css')))
-      .pipe($.if(env.prod, $.minifyCss()))
       .pipe($.size({title: 'VENDOR CSS', showFiles: true}))
       .pipe($.if(!env.prod, gulp.dest(paths.dev.css), gulp.dest(paths.prod.css)));
   });
