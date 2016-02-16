@@ -7,8 +7,8 @@ module.exports = (gulp, $, paths, env) => {
   // lint js
   gulp.task('lint:js', () => {
     return gulp.src(paths.src.js)
-      .pipe($.jshint())
-      .pipe($.jshint.reporter('jshint-stylish'));
+      .pipe($.eslint())
+      .pipe($.eslint.format());
   });
 
   // lint css
