@@ -8,12 +8,15 @@ With that said, I have created a simple directory structure with content under *
 
 ## Getting Started
 
+### ES6
+The ES6 version of this project can be found on the [es6 branch](https://github.com/bellizio/gulp-starter-kit/tree/es6). The dependencies and setup procedures are the same.
+
 ### Dependencies
 * [Node](https://nodejs.org/)*
 * [Bower](http://bower.io/) - `npm install -g bower`
 * [Gulp](http://gulpjs.com/) - `npm install -g gulp`
 
-*I recommend installing node via [nvm](https://github.com/creationix/nvm). Please see the [support](https://github.com/bellizio/gulp-starter-kit/blob/master/README.md#support) section for more information regarding node compatibility.
+*I recommend installing node via [nvm](https://github.com/creationix/nvm). Node 4.3.0 or higher is required for this project.
 
 ### Setup
 1. `git clone https://github.com/bellizio/gulp-starter-kit.git`
@@ -60,10 +63,5 @@ The `gulp build:prod` command will call the necessary tasks for building all app
 
 ## Support
 
-### Compatibility
-This project has been tested with node versions 4.2.1 and 5.0.0. Though it is likely compatible with higher versions.
-
-That said, any issue experienced with node versions < 4.2.1 is not supported. Furthermore, any modifications to the project in order to achieve compatibility with node versions < 4.2.1 is also not supported.
-
 ### Issues
-After confirming that you have node 4.2.1 or higher installed, feel free to report any issues you experience and I will do my best to address them accordingly.
+After confirming that you have node 4.3.0 or higher installed, feel free to report any issues you experience and I will do my best to address them accordingly.
