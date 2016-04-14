@@ -2,7 +2,7 @@
 
 module.exports = function(gulp, $, paths, env) {
 
-  var cssnano      = require('cssnano');
+  var cssnano      = require('cssnano')({'options.safe': 'true'});
   var autoprefixer = require('autoprefixer')({browsers: ['last 2 versions']});
 
   // build all css
