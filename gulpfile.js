@@ -38,6 +38,6 @@ taskList.forEach((taskFile) => {
   try {
     require(taskPath + taskFile)(gulp, $, paths, env);
   } catch(error) {
-    console.error(taskFile + ' could not be loaded: ' + error);
+    console.error(`${taskFile} could not be loaded: ${error}`);
   }
 });

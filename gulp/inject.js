@@ -5,14 +5,14 @@ module.exports = (gulp, $, paths, env) => {
   gulp.task('inject:dev', () => {
     const css = gulp.src([
       // order is important here
-      paths.dev.css + '/vendor.css',
-      paths.dev.css + '/app.css'
+      `${paths.dev.css}/vendor.css`,
+      `${paths.dev.css}/app.css`
     ], {read: false});
 
     const js = gulp.src([
       // order is important here
-      paths.dev.js + '/vendor.js',
-      paths.dev.js + '/app.js'
+      `${paths.dev.js}/vendor.js`,
+      `${paths.dev.js}/app.js`
     ], {read: false});
 
     const cssOptions = {
@@ -25,7 +25,7 @@ module.exports = (gulp, $, paths, env) => {
       addRootSlash: false
     };
 
-    return gulp.src(paths.src.root + '/index.html')
+    return gulp.src(`${paths.src.root}/index.html`)
       .pipe($.inject(css, cssOptions))
       .pipe($.inject(js, jsOptions))
       .pipe(gulp.dest(paths.dev.root));
@@ -35,12 +35,12 @@ module.exports = (gulp, $, paths, env) => {
   gulp.task('inject:prod', () => {
     const css = gulp.src([
       // order is important here
-      paths.prod.css + '/app.min.css'
+      `${paths.prod.css}/app.min.css`
     ], {read: false});
 
     const js = gulp.src([
       // order is important here
-      paths.prod.js + '/app.min.js'
+      `${paths.prod.js}/app.min.js`
     ], {read: false});
 
     const cssOptions = {
@@ -53,7 +53,7 @@ module.exports = (gulp, $, paths, env) => {
       addRootSlash: false
     };
 
-    return gulp.src(paths.src.root + '/index.html')
+    return gulp.src(`${paths.src.root}/index.html`)
       .pipe($.inject(css, cssOptions))
       .pipe($.inject(js, jsOptions))
       .pipe(gulp.dest(paths.prod.root));

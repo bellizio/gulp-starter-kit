@@ -26,8 +26,8 @@ module.exports = (gulp, $, paths, env) => {
   gulp.task('js:prod', ['js:dev'], () => {
     const sourceFiles = [
       // order is important here
-      paths.prod.js + '/vendor.js',
-      paths.prod.js + '/app.js'
+      `${paths.prod.js}/vendor.js`,
+      `${paths.prod.js}/app.js`
     ];
 
     return gulp.src(sourceFiles)

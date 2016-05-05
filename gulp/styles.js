@@ -18,7 +18,7 @@ module.exports = (gulp, $, paths, env) => {
       ]
     };
 
-    return gulp.src(paths.src.root + '/assets/css/app.scss')
+    return gulp.src(`${paths.src.root}/assets/css/app.scss`)
       .pipe($.if(!env.prod, $.sourcemaps.init()))
         .pipe($.sass(sassOptions))
         .pipe($.if(!env.prod, $.postcss([autoprefixer]), $.postcss([autoprefixer, cssnano])))
