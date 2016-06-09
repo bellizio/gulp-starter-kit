@@ -1,16 +1,16 @@
 'use strict';
 
-module.exports = function(gulp, $, paths, env) {
+module.exports = (gulp, $, paths, env) => {
 
-  var cssnano      = require('cssnano')({'options.safe': 'true'});
-  var autoprefixer = require('autoprefixer')({browsers: ['last 2 versions']});
+  const cssnano      = require('cssnano')({'options.safe': 'true'});
+  const autoprefixer = require('autoprefixer')({browsers: ['last 2 versions']});
 
   // build all css
   gulp.task('css', ['app-css', 'vendor-css']);
 
   // build app css
-  gulp.task('app-css', function() {
-    var sassOptions = {
+  gulp.task('app-css', () => {
+    const sassOptions = {
       style: 'nested',
       precision: 10,
       includePaths: [
@@ -18,7 +18,7 @@ module.exports = function(gulp, $, paths, env) {
       ]
     };
 
-    return gulp.src(paths.src.root + '/assets/css/app.scss')
+    return gulp.src(`${paths.src.root}/assets/css/app.scss`)
       .pipe($.if(!env.prod, $.sourcemaps.init()))
         .pipe($.sass(sassOptions))
         .pipe($.if(!env.prod, $.postcss([autoprefixer]), $.postcss([autoprefixer, cssnano])))
@@ -29,7 +29,7 @@ module.exports = function(gulp, $, paths, env) {
   });
 
   // build vendor css
-  gulp.task('vendor-css', function() {
+  gulp.task('vendor-css', () => {
     return gulp.src($.mainBowerFiles({filter: '**/*.css'}))
       .pipe($.concat('vendor.css'))
       .pipe($.if(env.prod, $.postcss([cssnano])))

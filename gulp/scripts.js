@@ -1,11 +1,11 @@
 'use strict';
 
-module.exports = function(gulp, $, paths, env) {
+module.exports = (gulp, $, paths, env) => {
   // build js for dev
   gulp.task('js:dev', ['vendor-js', 'app-js']);
 
   // build vendor js
-  gulp.task('vendor-js', function() {
+  gulp.task('vendor-js', () => {
     return gulp.src($.mainBowerFiles({filter: '**/*.js'}))
       .pipe($.concat('vendor.js'))
       .pipe($.size({title: 'VENDOR JS', showFiles: true}))
@@ -13,7 +13,7 @@ module.exports = function(gulp, $, paths, env) {
   });
 
   // build app js
-  gulp.task('app-js', function() {
+  gulp.task('app-js', () => {
     return gulp.src(paths.src.js)
       .pipe($.if(!env.prod, $.sourcemaps.init()))
         .pipe($.concat('app.js'))
@@ -23,11 +23,11 @@ module.exports = function(gulp, $, paths, env) {
   });
 
   // build js for prod
-  gulp.task('js:prod', ['js:dev'], function() {
-    var sourceFiles = [
+  gulp.task('js:prod', ['js:dev'], () => {
+    const sourceFiles = [
       // order is important here
-      paths.prod.js + '/vendor.js',
-      paths.prod.js + '/app.js'
+      `${paths.prod.js}/vendor.js`,
+      `${paths.prod.js}/app.js`
     ];
 
     return gulp.src(sourceFiles)
@@ -35,7 +35,7 @@ module.exports = function(gulp, $, paths, env) {
       .pipe($.uglify())
       .pipe($.size({title: 'APP JS', showFiles: true}))
       .pipe(gulp.dest(paths.prod.js))
-      .on('end', function() {
+      .on('end', () => {
         return $.del(sourceFiles);
       });
   });

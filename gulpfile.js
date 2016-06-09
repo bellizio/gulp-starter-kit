@@ -1,6 +1,6 @@
 'use strict';
 
-var gulp     = require('gulp'),
+const gulp   = require('gulp'),
     $        = require('gulp-load-plugins')({
       pattern: ['gulp-*', 'main-bower-files', 'del', 'run-sequence', 'browser-sync']
     }),
@@ -8,7 +8,7 @@ var gulp     = require('gulp'),
     taskList = require('fs').readdirSync(taskPath),
     env      = {};
 
-var paths = {
+const paths = {
   bower:   'bower_components',
   src: {
     root:  'app/source',
@@ -34,10 +34,10 @@ var paths = {
   }
 };
 
-taskList.forEach(function(taskFile) {
+taskList.forEach((taskFile) => {
   try {
     require(taskPath + taskFile)(gulp, $, paths, env);
   } catch(error) {
-    console.error(taskFile + ' could not be loaded: ' + error);
+    console.error(`${taskFile} could not be loaded: ${error}`);
   }
 });
