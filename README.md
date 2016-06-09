@@ -8,9 +8,6 @@ With that said, I have created a simple directory structure with content under *
 
 ## Getting Started
 
-### ES6
-The ES6 version of this project can be found on the [es6 branch](https://github.com/bellizio/gulp-starter-kit/tree/es6). The dependencies and setup procedures are the same.
-
 ### Dependencies
 * [Node](https://nodejs.org/)*
 * [Bower](http://bower.io/) - `npm install -g bower`
