@@ -3,7 +3,7 @@
 
 # Gulp Starter Kit
 
-This is a gulp starter kit for front-end projects. The goal of this project is to provide a foundation for building front-end applications for both local development and production environments. It is built to be framework agnostic. This is so that it can be easily expanded upon and integrated with any technology stack.
+This is a gulp starter kit for front-end projects. The goal of this project is to provide a foundation for building front-end applications for both local development and production environments. It is built to be framework agnostic so that it can be easily expanded upon and integrated with any technology stack.
 
 In order for the build process to be functional, at least a couple (necessary) assumptions need to be made: 1) a source directory structure with content exist and 2) Bower is used. While it could be argued that number 2 is not necessary, I do find (like many other developers) that the use of Bower makes front-end dependency management much less of a headache, especially on large scale applications.
 
@@ -13,15 +13,15 @@ With that said, I have created a simple directory structure with content under *
 
 ### Dependencies
 * [Node](https://nodejs.org/)*
-* [Bower](http://bower.io/) - `npm install -g bower`
-* [Gulp](http://gulpjs.com/) - `npm install -g gulp`
+* [Bower](http://bower.io/)
+* [Gulp](http://gulpjs.com/)
 
 *I recommend installing node via [nvm](https://github.com/creationix/nvm). Node 4.3.0 or higher is required for this project.
 
 ### Setup
 1. `git clone https://github.com/bellizio/gulp-starter-kit.git`
 1. `cd gulp-starter-kit`
-1.  `npm install`
+1. `npm install`
 
 ## Overview
 
@@ -61,7 +61,8 @@ Run `gulp build:prod` to build the application for production.
 
 The `gulp build:prod` command will call the necessary tasks for building all application assets and moving files to a newly generated **app/prod** directory. You can optionally run `gulp serve:prod` to view the build locally at **http://localhost:8000**. There is no 'watch' task configured when `gulp serve:prod` is run. It is simply a way to verify that the production build works as expected prior to deployment to another environment.
 
-## Support
+## Contributing
 
-### Issues
-After confirming that you have node 4.3.0 or higher installed, feel free to report any issues you experience and I will do my best to address them accordingly.
+See an issue or an opportunity to help make the app better?
+
+After cloning the repo, feel free to reach out by creating a new [issue](https://github.com/bellizio/gulp-starter-kit/issues) or opening a [pull request](https://github.com/bellizio/gulp-starter-kit/pulls).
