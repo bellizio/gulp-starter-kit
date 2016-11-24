@@ -29,7 +29,7 @@
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-eslint": "^3.0.1",
-    "gulp-htmlmin": "^2.0.0",
+    "gulp-htmlmin": "^3.0.0",
     "gulp-if": "^2.0.0",
     "gulp-imagemin": "^3.0.1",
     "gulp-inject": "^4.0.0",
@@ -40,7 +40,7 @@
     "gulp-sass-lint": "^1.1.1",
     "gulp-size": "^2.0.0",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^1.5.2",
+    "gulp-uglify": "^2.0.0",
     "main-bower-files": "^2.11.1",
     "run-sequence": "^1.1.5"
   },
