@@ -1,6 +1,3 @@
-[![Dependency Status](https://david-dm.org/bellizio/gulp-starter-kit.svg)](https://david-dm.org/bellizio/gulp-starter-kit)
-[![devDependency Status](https://david-dm.org/bellizio/gulp-starter-kit/dev-status.svg)](https://david-dm.org/bellizio/gulp-starter-kit#info=devDependencies)
-
 # Gulp Starter Kit
 
 This is a gulp starter kit for front-end projects. The goal of this project is to provide a foundation for building front-end applications for both local development and production environments. It is built to be framework agnostic so that it can be easily expanded upon and integrated with any technology stack.
